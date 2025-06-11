@@ -26,9 +26,12 @@ if place_meeting(x,y,oEnemy) and inv <= 0{
 if(life<=0){
 	game_restart()
 }
-if(xp == 50){
+if(xp == 100){
 	xp = 0
 	dano += 1
 	nivel += 1
 }
 show_debug_message(nivel)
+
+x = clamp(x, 0 + sprite_width / 2, room_width - sprite_width / 2)
+y = clamp(y, 0 + sprite_height / 2, room_height - sprite_height / 2)

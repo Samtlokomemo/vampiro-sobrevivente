@@ -25,11 +25,13 @@ if place_meeting(x,y,oEnemy) and inv <= 0{
 }
 if(life<=0){
 	global.gameover = true
+	time_source_stop(oEnemySpawner.spawner_enemy)
 }
 if(xp == 100){
 	xp = 0
 	dano += 1
 	nivel += 1
+	oEnemySpawner.enemyTimer -= .1
 	//Curar um pouco ao subir de nivel
 	if(life < 100){
 		life += (life * 0.4)

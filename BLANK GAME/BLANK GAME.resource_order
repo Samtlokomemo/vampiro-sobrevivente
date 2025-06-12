@@ -19,6 +19,7 @@
   ],
   "ResourceOrderSettings":[
     {"name":"oBomba","order":1,"path":"objects/oBomba/oBomba.yy",},
+    {"name":"oController","order":8,"path":"objects/oController/oController.yy",},
     {"name":"oEnemy","order":2,"path":"objects/oEnemy/oEnemy.yy",},
     {"name":"oEnemySpawner","order":4,"path":"objects/oEnemySpawner/oEnemySpawner.yy",},
     {"name":"oLife","order":3,"path":"objects/oLife/oLife.yy",},

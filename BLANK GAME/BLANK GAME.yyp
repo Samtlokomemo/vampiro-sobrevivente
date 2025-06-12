@@ -36,7 +36,9 @@
   },
   "name":"BLANK GAME",
   "resources":[
+    {"id":{"name":"fntArial","path":"fonts/fntArial/fntArial.yy",},},
     {"id":{"name":"oBomba","path":"objects/oBomba/oBomba.yy",},},
+    {"id":{"name":"oController","path":"objects/oController/oController.yy",},},
     {"id":{"name":"oEnemy","path":"objects/oEnemy/oEnemy.yy",},},
     {"id":{"name":"oEnemySpawner","path":"objects/oEnemySpawner/oEnemySpawner.yy",},},
     {"id":{"name":"oItemPai","path":"objects/oItemPai/oItemPai.yy",},},

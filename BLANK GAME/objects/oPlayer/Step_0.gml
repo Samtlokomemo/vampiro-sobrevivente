@@ -24,12 +24,16 @@ if place_meeting(x,y,oEnemy) and inv <= 0{
 	life-=10	
 }
 if(life<=0){
-	game_restart()
+	global.gameover = true
 }
 if(xp == 100){
 	xp = 0
 	dano += 1
 	nivel += 1
+	//Curar um pouco ao subir de nivel
+	if(life < 100){
+		life += (life * 0.4)
+	}
 }
 show_debug_message(nivel)
 

@@ -1,6 +1,6 @@
 depth = -999
 
-spd = 2
+spd = 1
 cd = 10
 maxLife = 100
 life = maxLife

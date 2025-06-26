@@ -18,10 +18,6 @@ if(global.gameover){
 }
 if paused{
 	if !surface_exists(paused_surf){
-	    if paused_surf == -1{
-			instance_deactivate_all(true);
-			time_source_pause(oEnemySpawner.spawner_enemy)
-		}
 	    paused_surf = surface_create(window_get_width(), window_get_height());
 	    surface_set_target(paused_surf);
 	    draw_surface(application_surface, 0, 0);
@@ -31,26 +27,5 @@ if paused{
 	    draw_set_alpha(0.5);
 	    draw_rectangle_colour(0, 0, window_get_width(), window_get_height(), c_black, c_black, c_black, c_black, false);
 	    draw_set_alpha(1);
-	    draw_set_halign(fa_center);
-	    draw_text_transformed_colour(window_get_width() / 2, window_get_height() / 2, "GAME PAUSED", 2, 2, 0, c_aqua, c_aqua, c_aqua, c_aqua, 1);
-	    draw_set_halign(fa_left);
 	}
-
-}
-
-if global.levelup{
-	if !surface_exists(paused_surf){
-	    if paused_surf == -1{
-			instance_deactivate_all(true);
-			time_source_pause(oEnemySpawner.spawner_enemy)	
-		}
-	    paused_surf = surface_create(window_get_width(), window_get_height());
-	    surface_set_target(paused_surf);
-	    draw_surface(application_surface, 0, 0);
-	    surface_reset_target();
-	}else{
-	    layer_set_visible("LevelUP", true)
-		//draw_surface(paused_surf, 0, 0);
-	}
-
 }

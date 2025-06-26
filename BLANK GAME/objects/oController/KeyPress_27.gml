@@ -1,5 +1,5 @@
 if !paused and !global.levelup{
 	gamePause()
-	exit
+}else if paused and !global.levelup{
+	gameResume()	
 }
-gameResume()

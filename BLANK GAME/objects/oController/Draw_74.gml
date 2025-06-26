@@ -16,6 +16,7 @@ if(global.gameover){
 	draw_set_alpha(alpha);
 	draw_text(window_get_width() / 2, window_get_height() / 2 + 40, "press R to play again");
 }
+
 if paused{
 	if !surface_exists(paused_surf){
 	    paused_surf = surface_create(window_get_width(), window_get_height());

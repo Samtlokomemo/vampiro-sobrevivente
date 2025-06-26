@@ -32,6 +32,7 @@ if(xp == 100){
 	dano += 1
 	nivel += 1
 	oEnemySpawner.enemyTimer -= .1
+	global.levelup = true;
 	//Curar um pouco ao subir de nivel
 	if(life < 100){
 		life += (life * 0.4)

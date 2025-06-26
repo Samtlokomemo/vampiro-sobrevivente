@@ -7,6 +7,6 @@ life = maxLife
 inv = 10
 isHited = false
 
-xp = 0
+xp = 90
 nivel = 0
 dano = 2

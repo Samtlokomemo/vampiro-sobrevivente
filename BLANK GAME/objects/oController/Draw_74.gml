@@ -17,14 +17,14 @@ if(global.gameover){
 	draw_text(window_get_width() / 2, window_get_height() / 2 + 40, "press R to play again");
 }
 
-if paused{
-	if !surface_exists(paused_surf){
-	    paused_surf = surface_create(window_get_width(), window_get_height());
-	    surface_set_target(paused_surf);
+if global.paused{
+	if !surface_exists(global.pausedSurf){
+	    global.pausedSurf = surface_create(window_get_width(), window_get_height());
+	    surface_set_target(global.pausedSurf);
 	    draw_surface(application_surface, 0, 0);
 	    surface_reset_target();
 	}else{
-	    draw_surface(paused_surf, 0, 0);
+	    draw_surface(global.pausedSurf, 0, 0);
 	    draw_set_alpha(0.5);
 	    draw_rectangle_colour(0, 0, window_get_width(), window_get_height(), c_black, c_black, c_black, c_black, false);
 	    draw_set_alpha(1);

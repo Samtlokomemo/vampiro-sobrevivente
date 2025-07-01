@@ -26,6 +26,7 @@
   "name":"BLANK GAME",
   "resources":[
     {"id":{"name":"fntArial","path":"fonts/fntArial/fntArial.yy",},},
+    {"id":{"name":"Note1","path":"notes/Note1/Note1.yy",},},
     {"id":{"name":"oBless","path":"objects/oBless/oBless.yy",},},
     {"id":{"name":"oBomba","path":"objects/oBomba/oBomba.yy",},},
     {"id":{"name":"oButton","path":"objects/oButton/oButton.yy",},},

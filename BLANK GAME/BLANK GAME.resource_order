@@ -6,6 +6,7 @@
     {"name":"Rooms","order":3,"path":"folders/Rooms.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"Note1","order":6,"path":"notes/Note1/Note1.yy",},
     {"name":"oBless","order":9,"path":"objects/oBless/oBless.yy",},
     {"name":"oBomba","order":1,"path":"objects/oBomba/oBomba.yy",},
     {"name":"oButton","order":10,"path":"objects/oButton/oButton.yy",},

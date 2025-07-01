@@ -1,0 +1,116 @@
+Como montar sistema de bless (cartas) com raridade e buff
+1. Organização das bless (cartas)
+
+Em vez de criar um objeto separado pra cada bless, o ideal é:
+
+    Criar um objeto genérico, tipo oBlessCard
+
+    Passar pra ele os dados da bless (nome, descrição, raridade, buff) via variáveis ou structs
+
+    Assim você cria várias bless “dentro” de um mesmo objeto, só mudando os dados
+
+2. Definindo raridade com cores
+
+Uma boa forma é criar uma função que retorna a cor conforme a raridade.
+
+Exemplo de raridade:
+Raridade	Cor (exemplo)
+Comum	c_white
+Rara	c_blue
+Épica	c_purple
+Lendária	c_orange
+3. Estrutura básica do oBlessCard
+
+No Create do oBlessCard, você pode ter algo assim:
+
+// Exemplo de estrutura para armazenar dados da bless
+// (passar via script, objeto pai, ou array)
+
+name = "";            // Nome da bless
+description = "";     // Descrição para UI
+rarity = "Comum";     // Pode ser "Comum", "Rara", "Épica", etc.
+buff_function = noone; // Função que aplica o buff
+
+// Função para pegar cor conforme raridade
+function getRarityColor(rarity_str) {
+    switch (rarity_str) {
+        case "Comum":  return c_white;
+        case "Rara":   return c_blue;
+        case "Épica":  return c_purple;
+        case "Lendária": return c_orange;
+        default:       return c_black;
+    }
+}
+
+// No Draw Event do oBlessCard
+draw_set_color(getRarityColor(rarity));
+draw_rectangle(x, y, x + 128, y + 192, false); // exemplo de retângulo colorido
+
+draw_set_color(c_black);
+draw_text(x + 10, y + 10, name);
+draw_text(x + 10, y + 40, description);
+
+4. Aplicando o buff
+
+    Cada bless tem uma função que será chamada quando o jogador escolher ela.
+
+    Essa função vai modificar as variáveis do jogador (ex: aumentar dano, vida, velocidade)
+
+Exemplo:
+
+function buff_increaseDamage() {
+    oPlayer.damage_multiplier += 0.2;
+}
+
+function buff_increaseSpeed() {
+    oPlayer.speed += 1;
+}
+
+Quando o jogador escolher a bless, você faz:
+
+buff_function(); // chama a função para aplicar o buff
+
+5. Como gerar 3 opções aleatórias para o jogador
+
+Você pode criar um array global com todas as bless disponíveis:
+
+global.blesses = [
+    { name: "Força", description: "+20% dano", rarity: "Comum", buff_function: buff_increaseDamage },
+    { name: "Velocidade", description: "+1 velocidade", rarity: "Rara", buff_function: buff_increaseSpeed },
+    { name: "Vida Extra", description: "+10 de vida", rarity: "Épica", buff_function: function() { oPlayer.hp_max += 10; oPlayer.hp += 10; } },
+    // mais bless aqui...
+];
+
+Depois, para mostrar 3 aleatórias:
+
+function getRandomBlesses(n) {
+    var arr = [];
+    var indices = ds_list_create();
+    
+    // pegar indices para não repetir
+    while (ds_list_size(indices) < array_length(global.blesses)) {
+        ds_list_add(indices, ds_list_size(indices));
+    }
+    
+    for (var i = 0; i < n; i++) {
+        var idx = irandom(ds_list_size(indices) - 1);
+        array_push(arr, global.blesses[indices[| idx]]);
+        ds_list_delete(indices, idx);
+    }
+    
+    ds_list_destroy(indices);
+    return arr;
+}
+
+Use essa função para criar as 3 cartas na tela, passando os dados delas para 3 instâncias de oBlessCard.
+Resumo
+
+    Crie 1 objeto oBlessCard que desenha e guarda dados da bless
+
+    Use um array global global.blesses com todas as bless disponíveis, cada uma com nome, descrição, raridade e buff_function
+
+    Mostre 3 aleatórias para o jogador
+
+    Quando o jogador escolhe uma, chama a função de buff pra aplicar no jogador
+
+    No draw da carta, pinta ela conforme a raridade

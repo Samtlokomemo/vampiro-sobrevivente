@@ -1,3 +1,5 @@
+depth = -9999
+
 global.gameover = false
 global.levelup = false
 global.paused = false

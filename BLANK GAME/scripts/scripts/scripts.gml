@@ -14,16 +14,26 @@ time_source_start(global.spawner_enemy);
 #endregion
 
 function gamePause(){
-	instance_deactivate_all(true)
-	time_source_pause(global.spawner_enemy)
-	global.paused = true
+    global.paused = true;
+    
+    //Deixar a sala amarela
+    bgId = layer_background_get_id("Background")
+    layer_background_blend(bgId, #5B7A23);
+    layer_hspeed("Background", .1)
+    layer_vspeed("Background", -.1)
+
+    // Pausa spawners do jogo
+    time_source_pause(global.spawner_enemy);
 }
 
 function gameResume(){
-	instance_activate_all()
+    bgId = layer_background_get_id("Background")
+    layer_background_blend(bgId, #4A237A);
+    layer_hspeed("Background", .4)
+    layer_vspeed("Background", .4)
+    
 	time_source_resume(global.spawner_enemy)
 	global.paused = false
 	global.pausedSurf = -1
 	layer_set_visible("Pause", false)
-	layer_set_visible("LevelUP", false);
 }

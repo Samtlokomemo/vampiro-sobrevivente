@@ -1,2 +1,3 @@
-image_xscale = 4.5;
-image_yscale = 4.5;
+image_xscale = 1.2;
+image_yscale = 1.2;
+text_scale = .35;

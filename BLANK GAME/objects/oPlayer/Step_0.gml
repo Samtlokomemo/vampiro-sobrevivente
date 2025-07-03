@@ -1,3 +1,8 @@
+if (global.paused) {
+    // Não faz nada enquanto o jogo estiver pausado
+    return;
+}
+
 var _up		= keyboard_check(ord("W"));
 var _left	= keyboard_check(ord("A"));
 var _down	= keyboard_check(ord("S"));
@@ -28,7 +33,7 @@ if(life<=0){
 	time_source_stop(global.spawner_enemy)
 }
 if(xp == 100){
-	xp = 0
+	xp = 90
 	dano += 1
 	nivel += 1
 	global.enemyTimer -= .1
@@ -38,7 +43,6 @@ if(xp == 100){
 		life += (life * 0.4)
 	}
 }
-show_debug_message(nivel)
 
 x = clamp(x, 0 + sprite_width / 2, room_width - sprite_width / 2)
 y = clamp(y, 0 + sprite_height / 2, room_height - sprite_height / 2)

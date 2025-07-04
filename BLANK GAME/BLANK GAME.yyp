@@ -39,6 +39,7 @@
     {"id":{"name":"oXp","path":"objects/oXp/oXp.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"RoomUI","path":"roomui/RoomUI/RoomUI.yy",},},
+    {"id":{"name":"itens","path":"scripts/itens/itens.yy",},},
     {"id":{"name":"scripts","path":"scripts/scripts/scripts.yy",},},
     {"id":{"name":"sBG","path":"sprites/sBG/sBG.yy",},},
     {"id":{"name":"sBless","path":"sprites/sBless/sBless.yy",},},

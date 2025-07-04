@@ -16,6 +16,7 @@
     {"name":"oProjetil","order":1,"path":"objects/oProjetil/oProjetil.yy",},
     {"name":"oXp","order":4,"path":"objects/oXp/oXp.yy",},
     {"name":"RoomUI","order":4,"path":"roomui/RoomUI/RoomUI.yy",},
+    {"name":"itens","order":7,"path":"scripts/itens/itens.yy",},
     {"name":"scripts","order":5,"path":"scripts/scripts/scripts.yy",},
     {"name":"sBG","order":2,"path":"sprites/sBG/sBG.yy",},
     {"name":"sBless","order":6,"path":"sprites/sBless/sBless.yy",},

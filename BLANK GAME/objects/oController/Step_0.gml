@@ -1,9 +1,16 @@
-if global.levelup{
+if (global.levelup) {
     gamePause();
-    for (var i = 1; i < 4; i++) {
-        instance_create_depth(75 * i, room_height / 2, -100, oBless)
-        instance_activate_object(oBless);
+    var bless = getRandomBlesses(3);
+
+    for (var i = 0; i < 3; i++) {
+        var x_pos = 60 + 100 * i; // ajuste a posição como preferir
+        var y_pos = room_height / 2;
+
+        var card = instance_create_depth(x_pos, y_pos, -100, oBless);
+        card.setData(bless[i]); // passa os dados da bless
     }
-}else{
-    instance_destroy(oBless)
+} else {
+    with (oBless) {
+        instance_destroy();
+    }
 }

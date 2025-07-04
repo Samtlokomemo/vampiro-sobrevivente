@@ -15,6 +15,10 @@ if(global.gameover){
 	
 	draw_set_alpha(alpha);
 	draw_text(window_get_width() / 2, window_get_height() / 2 + 40, "press R to play again");
+    
+    layer_background_blend(bgId, c_red);
+    layer_hspeed("Background", 0)
+    layer_vspeed("Background", .4)
 }
 
 if global.levelup{
@@ -26,8 +30,10 @@ if global.levelup{
     
     draw_text_transformed(window_get_width() / 2, 100, "Choose a Bless", 3, 3, 0);
 }else{
-    //HP BAR
-    draw_healthbar(5, 5, 200, 30, oPlayer.life, c_black, c_maroon, c_green, 0, true, true)
-    //XP BAR
-    draw_healthbar(window_get_width() / 2 + 200, window_get_height() / 2 + 200, window_get_width() / 2 - 200, window_get_height() / 2 + 220, oPlayer.xp, c_black, c_green, c_lime, 1, true, true)
+    if instance_exists(oPlayer){
+        //HP BAR
+        draw_healthbar(5, 5, 200, 30, oPlayer.life, c_black, c_maroon, c_green, 0, true, true)
+        //XP BAR
+        draw_healthbar(window_get_width() / 2 + 200, window_get_height() / 2 + 200, window_get_width() / 2 - 200, window_get_height() / 2 + 220, oPlayer.xp, c_black, c_green, c_lime, 1, true, true)
+    }
 }

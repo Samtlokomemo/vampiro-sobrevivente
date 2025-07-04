@@ -1,3 +1,3 @@
 life = 10
-spd = 1
+spd = .5
 isHited = false

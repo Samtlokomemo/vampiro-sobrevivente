@@ -1,5 +1,4 @@
 if(global.gameover){
-	global.gameover = false
-	instance_activate_all()
+    instance_destroy(all)
 	game_restart()
 }
